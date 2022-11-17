@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Retirement Calculator</title>
+
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <!-- https://developers.google.com/apps-script/add-ons/guides/css -->
+    <link rel="stylesheet" href="style.css" type="text/css" />
+
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Retirement Income Calculator</h1>
+
+<div class="block form-group">
+
+Current assets (savings, 401k/403b, stocks, bonds, etc): <br/>
+$<input type="number" id="current_savings" /><br/><br/>
+
+Montly retirement contribution (amount you are saving per month): <br/>
+$<input type="number" id="monthly_contribution" /><br/><br/>
+
+Your age now: <br/>
+<input type="number" id="age" /><br/><br/>
+Your age at retirement: <br/>
+<input type="number" id="retirement_age" /><br/><br/>
+
+<label for="roa">Choose a rate of return on your investments (2% is very conservative, 8% is very optimistic):</label>
+
+    <select onchange=retirementIncome() name="roa" id="roa">
+        <option value="0">Choose %</option>
+        <option value=".01">1%</option>
+        <option value=".02">2%</option>
+        <option value=".03">3%</option>
+        <option value=".04">4%</option>
+        <option value=".05">5%</option>
+        <option value=".06">6%</option>
+        <option value=".07">7%</option>
+        <option value=".08">8%</option>
+        <option value=".09">9%</option>
+        <option value=".1">10%</option>
+    </select>
+
+<br/>
+
+<button class="share" onclick="retirementIncome()">Calculate</button><br/><br/>
+
+Your total assets at retirement: <br/>
+$<input type="text" id="retirement_assets" readonly /><br/><br/>
+
+Your monthly income after retirement: <br/>
+$<input type="text" id="retirement_income" readonly /><br/><br/>
+
+</div>
+</div>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html> 
